@@ -1,10 +1,14 @@
 :root {
   --body-bgColor: #cecece;
   --card-bgColor: #ffffff;
-  --text-color: #000000;
   --btn-color: #febb0c;
   --repositories-bgColor: #1c1c1c;
-  --repositories-color: #b8b2b2;
+  --repositories-color: #797979;
+}
+
+@font-face {
+  font-family: "manrope";
+  src: url(../fonts/Manrope/static/Manrope-Regular.ttf);
 }
 
 * {
@@ -18,14 +22,28 @@
 
 html {
   font-size: 10px;
+  font-family: "manrope";
 }
 
 img {
   width: 100%;
 }
 
+header {
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100vw;
+  padding: 1rem;
+}
+
 h1 {
   text-align: center;
+}
+
+header img {
+  width: 8rem;
 }
 
 body {
@@ -36,9 +54,9 @@ body {
 }
 
 main {
-  margin: 0 auto;
-  height: 100vh;
-  gap: 3rem;
+  margin: 1rem auto;
+  min-height: 80vh;
+  gap: 2rem;
 }
 
 main,
@@ -49,13 +67,17 @@ main,
   align-items: center;
 }
 
+.card,
+.search {
+  margin: 0 2rem;
+  max-width: 40rem;
+}
+
 .card {
   background-color: var(--card-bgColor);
-  width: 40rem;
   font-size: 1.6rem;
   border-radius: 8px;
   box-shadow: 0rem 0rem 2rem -1rem black;
-  overflow: hidden;
 }
 
 #user-repositories {
@@ -67,6 +89,7 @@ main,
 #user {
   padding: 4rem;
   text-align: center;
+  gap: 1rem;
 }
 
 #user img {
@@ -74,5 +97,91 @@ main,
   border-radius: 100%;
   background-color: var(--card-bgColor);
   padding: 1rem;
+  box-shadow: 0rem 0rem 0.3rem 0.05rem var(--repositories-color);
+}
+
+#user h2 {
+  color: var(--repositories-bgColor);
+}
+
+.user-location {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--repositories-bgColor);
+}
+
+#user-repositories h3 {
+  font-size: 1.6rem;
+}
+
+#user-repositories .repositores {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-block: 1rem;
+  gap: 1.5rem;
+}
+
+#user-repositories a {
+  font-size: 1.4rem;
   border: 0.1rem solid var(--repositories-color);
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: 0.2s ease-in-out;
+}
+
+#user-repositories a:hover {
+  color: var(--btn-color);
+  border-color: #febb0c;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 40rem;
+}
+
+.search label {
+  font-size: 2.2rem;
+  align-self: self-start;
+}
+
+#search-input {
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  width: 100%;
+  border: none;
+  box-shadow: 0rem 0rem 0.3rem 0.05rem var(--repositories-color);
+}
+
+#button {
+  background-color: var(--btn-color);
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border: 0.2rem solid var(--btn-color);
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--repositories-bgColor);
+  transition: 0.2s ease-in-out;
+  box-shadow: 0rem 0rem 0.3rem 0.05rem var(--repositories-color);
+}
+
+#button:hover {
+  border: 0.2rem solid var(--repositories-bgColor);
+}
+
+@media (max-width: 450px) {
+  header {
+    font-size: 1.6rem;
+    flex-direction: column;
+  }
+  .search {
+    width: 90vw;
+  }
 }
