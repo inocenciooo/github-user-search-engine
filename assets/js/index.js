@@ -18,9 +18,11 @@ document.getElementById("search-input").addEventListener("keyup", (e) => {
 async function getUserInfo(inputValue) {
   const userInfo = await getUser(inputValue);
   const userRepositores = await getRepositories(inputValue);
-
-  console.log(userRepositores);
   
   user.setUser(userInfo);
+  user.setRepositories(userRepositores)
   screen.renderUser(user);
 }
+
+
+

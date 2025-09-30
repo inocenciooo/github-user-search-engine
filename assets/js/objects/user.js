@@ -4,7 +4,7 @@ const user = {
   imageUrl: "",
   location: "",
   bio: "",
-  repositores: [],
+  repositories: [],
   setUser(githubUser) {
     this.name = githubUser.name;
     this.userName = githubUser.login;
@@ -12,6 +12,9 @@ const user = {
     this.location = githubUser.location;
     this.bio = githubUser.bio;
   },
+  setRepositories(repositories) {
+    this.repositories = repositories
+  }
 };
 
 export { user };
