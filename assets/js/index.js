@@ -1,11 +1,26 @@
 import { getUser } from "./services/user.js";
-import { user } from "./objects/user.js"
+import { getRepositories } from "./services/repositories.js";
+import { user } from "./objects/user.js";
+import { screen } from "./objects/screen.js";
 
+document.getElementById("button").addEventListener("click", () => {
+  const inputValue = document.getElementById("search-input").value;
+  getUserInfo(inputValue);
+});
 
-console.log(await getUser("inocenciooo"))
-console.log(user)
+document.getElementById("search-input").addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    const inputValue = document.getElementById("search-input").value;
+    getUserInfo(inputValue);
+  }
+});
 
-async function setUserInfo(inputValue) {
-    const getUserResponse = await getUser(inputValue)
-    
+async function getUserInfo(inputValue) {
+  const userInfo = await getUser(inputValue);
+  const userRepositores = await getRepositories(inputValue);
+
+  console.log(userRepositores);
+  
+  user.setUser(userInfo);
+  screen.renderUser(user);
 }
