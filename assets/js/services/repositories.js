@@ -1,6 +1,8 @@
+import { baseUrl, repositoryQuantity } from "../variables.js";
+
 async function getRepositories(inputValue) {
   const response = await fetch(
-    `https://api.github.com/users/${inputValue}/repos?per_page=10`
+    `${baseUrl}/${inputValue}/repos?per_page=${repositoryQuantity}`
   );
   return response.json();
 }

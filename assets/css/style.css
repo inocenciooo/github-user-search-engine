@@ -67,9 +67,17 @@ main,
   align-items: center;
 }
 
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0 2rem;
+}
+
 .card,
 .search {
-  margin: 0 2rem;
   max-width: 40rem;
 }
 
@@ -78,6 +86,7 @@ main,
   font-size: 1.6rem;
   border-radius: 8px;
   box-shadow: 0rem 0rem 2rem -1rem black;
+  cursor: default;
 }
 
 #user-repositories {
@@ -102,6 +111,7 @@ main,
 
 #user h2 {
   color: var(--repositories-bgColor);
+  text-transform: capitalize;
 }
 
 .user-location {
@@ -178,12 +188,56 @@ main,
   border: 0.2rem solid var(--repositories-bgColor);
 }
 
+.user-social {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.user-social span {
+  font-weight: bold;
+}
+
+.activity div {
+  width: 40rem;
+  max-height: 71.45rem;
+  padding: 2rem;
+  font-size: 1.4rem;
+  background-color: var(--card-bgColor);
+}
+
+.activity .repo-name {
+  font-weight: bold;
+}
+
+.activity h4 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.activity li {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 0.15rem solid var(--repositories-bgColor);
+  padding: 1rem 0;
+}
+
+.activity li p {
+  padding: 0.1rem 0;
+}
+
 @media (max-width: 450px) {
   header {
     font-size: 1.6rem;
     flex-direction: column;
+    text-align: center;
   }
   .search {
     width: 90vw;
+  }
+
+  #user-repositories a {
+    width: 25em;
   }
 }

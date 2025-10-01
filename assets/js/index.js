@@ -1,5 +1,7 @@
 import { getUser } from "./services/user.js";
 import { getRepositories } from "./services/repositories.js";
+import { getUserEvents } from "./services/events.js";
+
 import { user } from "./objects/user.js";
 import { screen } from "./objects/screen.js";
 
@@ -18,13 +20,18 @@ document.getElementById("search-input").addEventListener("keyup", (e) => {
 async function getUserInfo(inputValue) {
   const userInfo = await getUser(inputValue);
   const userRepositores = await getRepositories(inputValue);
-  
+  const userEvents = await getUserEvents(inputValue);
+
   user.setUser(userInfo);
-  user.setRepositories(userRepositores)
-  
+  user.setRepositories(userRepositores);
+  user.setActivity(userEvents);
+
   screen.renderUser(user);
-  screen.renderRepositories(user)
+  screen.renderRepositories(user);
+
+  screen.renderActivity(user);
 }
 
+/*
 
-
+*/
