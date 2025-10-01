@@ -1,5 +1,6 @@
 :root {
   --body-bgColor: #cecece;
+  --activity-bgColor: #ebe8e8;
   --card-bgColor: #ffffff;
   --btn-color: #febb0c;
   --repositories-bgColor: #1c1c1c;
@@ -39,7 +40,7 @@ header {
 }
 
 h1 {
-  text-align: center;
+  line-height: 5rem;
 }
 
 header img {
@@ -87,12 +88,14 @@ main,
   border-radius: 8px;
   box-shadow: 0rem 0rem 2rem -1rem black;
   cursor: default;
+  overflow: hidden;
 }
 
 #user-repositories {
   background-color: var(--repositories-bgColor);
   color: var(--repositories-color);
   padding: 1.5rem;
+  min-height: 29rem;
 }
 
 #user {
@@ -165,8 +168,9 @@ main,
 }
 
 #search-input {
-  padding: 0.5rem;
-  font-size: 1.6rem;
+  font-family: "manrope";
+  padding: 1rem;
+  font-size: 1.8rem;
   width: 100%;
   border: none;
   box-shadow: 0rem 0rem 0.3rem 0.05rem var(--repositories-color);
@@ -201,10 +205,17 @@ main,
 
 .activity div {
   width: 40rem;
-  max-height: 71.45rem;
   padding: 2rem;
   font-size: 1.4rem;
-  background-color: var(--card-bgColor);
+  background-color: var(--activity-bgColor);
+  border-radius: 8px;
+  box-shadow: 0rem 0rem 2rem -1rem black;
+  cursor: default;
+}
+
+.card,
+.activity div {
+  height: 71.5rem;
 }
 
 .activity .repo-name {
@@ -223,8 +234,38 @@ main,
   padding: 1rem 0;
 }
 
+.activity li:last-child {
+  border: none;
+}
+
+
 .activity li p {
   padding: 0.1rem 0;
+}
+
+
+.rodape {
+  margin-top: 5rem;
+  padding: 3rem;
+  text-align: center;
+  min-height: 15vh;
+  background-color: var(--repositories-bgColor);
+  color: var(--body-bgColor);
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0rem 0rem 2rem -.1rem black;
+}
+
+.rodape .minha-sobrinha {
+  color: var(--btn-color);
+}
+
+.rodape .date {
+  font-weight: bold;
 }
 
 @media (max-width: 450px) {
@@ -233,6 +274,11 @@ main,
     flex-direction: column;
     text-align: center;
   }
+
+  .card {
+    height: auto;
+  }
+
   .search {
     width: 90vw;
   }
