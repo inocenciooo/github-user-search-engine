@@ -21,7 +21,9 @@ async function getUserInfo(inputValue) {
   
   user.setUser(userInfo);
   user.setRepositories(userRepositores)
+  
   screen.renderUser(user);
+  screen.renderRepositories(user)
 }
 
 

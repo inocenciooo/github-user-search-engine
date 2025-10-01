@@ -119,8 +119,7 @@ main,
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
   padding-block: 1rem;
   gap: 1.5rem;
 }
@@ -131,6 +130,9 @@ main,
   padding: 0.5rem;
   border-radius: 4px;
   transition: 0.2s ease-in-out;
+  display: block;
+  width: 12.5em;
+  text-align: center;
 }
 
 #user-repositories a:hover {
