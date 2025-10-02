@@ -81,7 +81,7 @@ main,
 
 .card,
 .search {
-  max-width: 40rem;
+  max-width: 100rem;
 }
 
 .card {
@@ -139,20 +139,51 @@ main,
   gap: 1.5rem;
 }
 
-#user-repositories a {
+#user-repositories li {
   font-size: 1.4rem;
   border: 0.1rem solid var(--repositories-color);
   padding: 0.5rem;
   border-radius: 4px;
-  transition: 0.2s ease-in-out;
   display: block;
   width: 12.5em;
   text-align: center;
+  font-weight: bold;
+}
+
+#user-repositories a {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+}
+
+#user-repositories li div {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  row-gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#user-repositories span {
+  background-color: var(--card-bgColor);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+  border: 2px solid var(--card-bgColor);
+  color: black;
 }
 
 #user-repositories a:hover {
   color: var(--btn-color);
   border-color: #febb0c;
+}
+
+#user-repositories span:hover {
+  border: 2px solid var(--btn-color);
 }
 
 .search {
@@ -215,7 +246,6 @@ main,
   cursor: default;
 }
 
-
 .activity .repo-name {
   font-weight: bold;
 }
@@ -236,11 +266,9 @@ main,
   border: none;
 }
 
-
 .activity li p {
   padding: 0.1rem 0;
 }
-
 
 .rodape {
   margin-top: 5rem;
@@ -255,7 +283,7 @@ main,
   align-items: center;
   flex-direction: column;
   gap: 1rem;
-  box-shadow: 0rem 0rem 2rem -.1rem black;
+  box-shadow: 0rem 0rem 2rem -0.1rem black;
 }
 
 .rodape .minha-sobrinha {
@@ -280,8 +308,16 @@ main,
   .search {
     width: 90vw;
   }
+}
 
-  #user-repositories a {
-    width: 25em;
+@media (min-width: 2200px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 3200px) {
+  html {
+    font-size: 18px;
   }
 }

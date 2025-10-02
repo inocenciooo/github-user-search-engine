@@ -6,8 +6,9 @@ const screen = {
                 <img src="${user.imageUrl ?? "No profile icon 😿"}">
                 <h2>${user.name ?? "No profile name 😿"}</h2>
                 <h4>${user.userName}</h4>
-                <p class="user-location">${user.location ?? "No profile location 😿"
-      }</p>
+                <p class="user-location">${
+                  user.location ?? "No profile location 😿"
+                }</p>
                 <p class="user-bio">${user.bio ?? "No profile bio 😿"}</p>
                 <div class= "user-social">
                   <p>👥 Followers: <span>${user.followers}</span></p>
@@ -19,7 +20,26 @@ const screen = {
   renderRepositories(user) {
     let repositories = "";
     user.repositories.forEach((repo) => {
-      repositories += `<li><a href="${repo.html_url}" target="_blank">${repo.name}</a></li>`;
+      repositories += `<li>
+                          <a href="${repo.html_url}" target="_blank">
+                            ${repo.name}
+                          
+                          <div> 
+                            <span>
+                              🍴${repo.forks_count}
+                            </span>
+                            <span>
+                              ⭐${repo.stargazers_count}
+                            </span>
+                            <span>
+                              👁️${repo.watchers_count}
+                            </span>
+                            <span>
+                              💻${repo.language ?? "no language"}
+                            </span>
+                          </div>
+                          </a>
+                        </li>`;
     });
     this.userProfile.innerHTML += `<div id="user-repositories">
                                     <h3>REPOSITORIES</h3>
@@ -55,9 +75,3 @@ const screen = {
 };
 
 export { screen };
-
-// type PushEvent CreateEvent
-
-//repo.name
-
-//payload.commits[0].message

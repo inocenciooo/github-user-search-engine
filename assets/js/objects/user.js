@@ -26,7 +26,3 @@ const user = {
 };
 
 export { user };
-
-/* 
-
-*/

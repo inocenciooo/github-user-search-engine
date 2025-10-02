@@ -19,6 +19,12 @@ document.getElementById("search-input").addEventListener("keyup", (e) => {
 
 async function getUserInfo(inputValue) {
   const userInfo = await getUser(inputValue);
+
+  if (userInfo.message === "Not Found") {
+    alert("Enter a valid Username.");
+    return;
+  }
+
   const userRepositores = await getRepositories(inputValue);
   const userEvents = await getUserEvents(inputValue);
 
@@ -32,6 +38,3 @@ async function getUserInfo(inputValue) {
   screen.renderActivity(user);
 }
 
-/*
-
-*/
