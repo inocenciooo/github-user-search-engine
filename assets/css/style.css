@@ -71,10 +71,12 @@ main,
 .cards {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
   margin: 0 2rem;
+  min-height: 75rem;
 }
 
 .card,
@@ -213,10 +215,6 @@ main,
   cursor: default;
 }
 
-.card,
-.activity div {
-  height: 71.5rem;
-}
 
 .activity .repo-name {
   font-weight: bold;
